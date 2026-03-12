@@ -1,278 +1,392 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jaswant Goud | Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<title>Jaswant Goud | Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-        
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(40px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-40px); }
-            to   { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes badgePop {
-            0%   { transform: scale(0); opacity: 0; }
-            70%  { transform: scale(1.1); }
-            100% { transform: scale(1); opacity: 1; }
-        }
+<style>
 
-        
-        header {
-            background-color: #1f3c88;
-            color: white;
-            text-align: center;
-            padding: 40px 0;
-            animation: fadeInDown 0.8s ease both;
-        }
-        header h1 {
-            font-size: 36px;
-            letter-spacing: 2px;
-            animation: fadeInDown 0.8s ease 0.1s both;
-        }
-        header p {
-            margin-top: 8px;
-            font-size: 15px;
-            color: #c5d0f0;
-            animation: fadeIn 1s ease 0.3s both;
-        }
-
-        
-        nav {
-            background-color: #163172;
-            text-align: center;
-            padding: 12px;
-            animation: fadeInDown 0.8s ease 0.2s both;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 20px;
-            font-weight: bold;
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.3s ease;
-        }
-        
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0;
-            width: 0; height: 2px;
-            background-color: #f8b400;
-            transition: width 0.3s ease;
-        }
-        nav a:hover { color: #f8b400; }
-        nav a:hover::after { width: 100%; }
-
-        
-        section {
-            padding: 25px 9%;
-        }
-
-        
-        .content-box {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            margin-bottom: 25px;
-            animation: fadeInUp 0.7s ease both;
-            
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .content-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-        }
-
-        
-        section:nth-child(3) .content-box { animation-delay: 0.2s; }
-        section:nth-child(4) .content-box { animation-delay: 0.3s; }
-        section:nth-child(5) .content-box { animation-delay: 0.4s; }
-        section:nth-child(6) .content-box { animation-delay: 0.5s; }
-
-        h2 {
-            color: #1f3c88;
-            margin-top: 0;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        h2::after {
-            content: '';
-            display: block;
-            width: 0;
-            height: 3px;
-            background: #f8b400;
-            margin-top: 5px;
-            transition: width 0.5s ease;
-        }
-        .content-box:hover h2::after { width: 100%; }
-
-        .skills {
-    margin-top: 10px;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-        .skills span {
-            display: inline-block;
-            background: #1f3c88;
-            color: white;
-            padding: 6px 14px;
-            margin: 5px;
-            border-radius: 15px;
-            font-size: 14px;
-            
-            animation: badgePop 0.5s ease both;
-            transition: background 0.3s ease, transform 0.2s ease;
-            cursor: default;
-        }
-        .skills span:hover {
-            background: #f8b400;
-            color: #1f3c88;
-            transform: scale(1.1);
-        }
-        
-        .skills span:nth-child(1) { animation-delay: 0.3s; }
-        .skills span:nth-child(2) { animation-delay: 0.45s; }
-        .skills span:nth-child(3) { animation-delay: 0.6s; }
-        .skills span:nth-child(4) { animation-delay: 0.75s; }
+body{
+font-family:'Poppins',sans-serif;
+background:#f2f2f2;
+}
 
-        
-        .college-info p {
-            margin: 8px 0;
-            color: #555;
-            animation: slideInLeft 0.6s ease both;
-        }
-        .college-info p:nth-child(2) { animation-delay: 0.1s; }
-        .college-info p:nth-child(3) { animation-delay: 0.2s; }
-        .college-info p:nth-child(4) { animation-delay: 0.3s; }
 
-        
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            outline: none;
-            transition: border 0.3s ease, box-shadow 0.3s ease;
-        }
-        form input:focus, form textarea:focus {
-            border: 1px solid #1f3c88;
-            box-shadow: 0 0 8px rgba(31,60,136,0.25);
-        }
-        form button {
-            background-color: #1f3c88;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 15px;
-            width: 100%;
-            margin-top: 10px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        form button:hover {
-            background-color: #163172;
-            transform: scale(1.02);
-        }
+/* animations */
 
-        
-        footer {
-            background-color: #1f3c88;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 20px;
-            animation: fadeIn 1s ease 0.8s both;
-        }
-    </style>
+@keyframes fadeInDown{
+from{opacity:0;transform:translateY(-30px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeInUp{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+@keyframes slideInLeft{
+from{opacity:0;transform:translateX(-40px);}
+to{opacity:1;transform:translateX(0);}
+}
+
+@keyframes badgePop{
+0%{transform:scale(0);opacity:0;}
+70%{transform:scale(1.1);}
+100%{transform:scale(1);opacity:1;}
+}
+
+
+/* header */
+
+header{
+background:#1f3c88;
+color:white;
+text-align:center;
+padding:40px 0;
+animation:fadeInDown 0.8s ease both;
+}
+
+header h1{
+font-size:36px;
+letter-spacing:2px;
+}
+
+header p{
+margin-top:8px;
+font-size:15px;
+color:#c5d0f0;
+}
+
+
+/* navigation */
+
+nav{
+background:#163172;
+text-align:center;
+padding:12px;
+position:sticky;
+top:0;
+z-index:100;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:20px;
+font-weight:500;
+position:relative;
+padding-bottom:4px;
+transition:0.3s;
+}
+
+nav a::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+width:0;
+height:2px;
+background:#f8b400;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#f8b400;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+
+/* section */
+
+section{
+padding:25px 9%;
+}
+
+
+/* content box */
+
+.content-box{
+background:white;
+padding:25px;
+border-radius:8px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+margin-bottom:25px;
+animation:fadeInUp 0.7s ease both;
+transition:0.3s;
+}
+
+.content-box:hover{
+transform:translateY(-5px);
+box-shadow:0 12px 25px rgba(0,0,0,0.12);
+}
+
+
+/* headings */
+
+h2{
+color:#1f3c88;
+margin-bottom:15px;
+position:relative;
+display:inline-block;
+}
+
+h2::after{
+content:'';
+display:block;
+width:0;
+height:3px;
+background:#f8b400;
+margin-top:5px;
+transition:0.5s;
+}
+
+.content-box:hover h2::after{
+width:100%;
+}
+
+
+/* skills */
+
+.skills{
+margin-top:10px;
+}
+
+.skills span{
+display:inline-block;
+background:#1f3c88;
+color:white;
+padding:6px 14px;
+margin:5px;
+border-radius:15px;
+font-size:14px;
+animation:badgePop 0.5s ease both;
+transition:0.3s;
+}
+
+.skills span:hover{
+background:#f8b400;
+color:#1f3c88;
+transform:scale(1.1);
+}
+
+
+/* projects */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.project-card{
+background:#f8f9fc;
+padding:18px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.project-card:hover{
+transform:translateY(-6px);
+box-shadow:0 10px 20px rgba(0,0,0,0.12);
+}
+
+.project-card h3{
+color:#1f3c88;
+margin-bottom:8px;
+font-size:18px;
+}
+
+.project-card p{
+color:#555;
+font-size:14px;
+}
+
+
+/* college */
+
+.college-info p{
+margin:8px 0;
+color:#555;
+animation:slideInLeft 0.6s ease both;
+}
+
+
+/* form */
+
+form input,form textarea{
+width:100%;
+padding:10px;
+margin:8px 0;
+border:1px solid #ccc;
+border-radius:4px;
+outline:none;
+transition:0.3s;
+}
+
+form input:focus,form textarea:focus{
+border:1px solid #1f3c88;
+box-shadow:0 0 8px rgba(31,60,136,0.25);
+}
+
+form button{
+background:#1f3c88;
+color:white;
+padding:12px 20px;
+border:none;
+border-radius:4px;
+cursor:pointer;
+font-size:15px;
+width:100%;
+margin-top:10px;
+transition:0.3s;
+}
+
+form button:hover{
+background:#163172;
+transform:scale(1.02);
+}
+
+
+
+footer{
+background:#1f3c88;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:20px;
+animation:fadeIn 1s ease both;
+}
+
+</style>
 </head>
+
+
 <body>
 
+
 <header>
-    <h1>Jaswant Goud</h1>
-    <p>First Year Student | Electronics and Communication Engineering (ECE)</p>
+<h1>Jaswant Goud</h1>
+<p>First Year Student | Electronics and Communication Engineering (ECE)</p>
 </header>
 
+
 <nav>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#college">College</a>
-    <a href="#contact">Contact</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#college">College</a>
+<a href="#contact">Contact</a>
 </nav>
 
+
 <section id="about">
-    <div class="content-box">
-        <h2>About Me</h2>
-        <p>Hello! I am Jaswant Goud, a first-year ECE student passionate about technology and programming. I am currently building my skills in web development and core programming languages.</p>
-    </div>
+<div class="content-box">
+<h2>About Me</h2>
+<p>Hello! I am Jaswant Goud, a first-year ECE student passionate about technology and programming. I am currently building my skills in web development and core programming languages.</p>
+</div>
 </section>
+
 
 <section id="skills">
-    <div class="content-box">
-        <h2>Skills</h2>
+<div class="content-box">
 
-        <div class="skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-            <span>Java</span>
-        </div>
+<h2>Skills</h2>
 
-    </div>
+<div class="skills">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+<span>Java</span>
+</div>
+
+</div>
 </section>
+
+
+<section id="projects">
+<div class="content-box">
+
+<h2>Projects</h2>
+
+<div class="projects">
+
+<div class="project-card">
+<h3>Portfolio Website</h3>
+<p>A personal portfolio website built using HTML and CSS with animations and responsive layout.</p>
+</div>
+
+<div class="project-card">
+<h3>Student Form System</h3>
+<p>A simple form system created with HTML and JavaScript for collecting user data.</p>
+</div>
+
+<div class="project-card">
+<h3>Java Practice Programs</h3>
+<p>A collection of beginner Java programs focusing on data structures and algorithm basics.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
 
 <section id="college">
-    <div class="content-box college-info">
-        <h2>College Information</h2>
-        <p>University: KL University, Hyderabad</p>
-        <p>Department: Electronics and Communication Engineering (ECE)</p>
-        <p>Year: First Year</p>
-    </div>
+<div class="content-box college-info">
+
+<h2>College Information</h2>
+
+<p>University: KL University, Hyderabad</p>
+<p>Department: Electronics and Communication Engineering (ECE)</p>
+<p>Year: First Year</p>
+
+</div>
 </section>
+
 
 <section id="contact">
-    <div class="content-box">
-        <h2>Contact Me</h2>
-        <form>
-            <label>Name</label>
-            <input type="text" placeholder="Enter your name" required>
-            <label>Email</label>
-            <input type="email" placeholder="Enter your email" required>
-            <label>Message</label>
-            <textarea rows="4" placeholder="Enter your message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+<div class="content-box">
+
+<h2>Contact Me</h2>
+
+<form>
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Message</label>
+<textarea rows="4" placeholder="Enter your message" required></textarea>
+
+<button type="submit">Send Message</button>
+</form>
+
+</div>
 </section>
 
+
 <footer>
-    <p>2026 Jaswant Goud | First Year ECE Student</p>
+<p>© 2026 Jaswant Goud | First Year ECE Student</p>
 </footer>
+
 
 </body>
 </html>
