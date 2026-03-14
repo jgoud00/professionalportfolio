@@ -341,15 +341,16 @@ animation:fadeIn 1s ease both;
 
 
 <script>
-  window.addEventListener('load', () => {
-    const el = document.getElementById('header-title');
-    const name = 'Jaswant Goud';
-    let i = 0;
-    let timer = setInterval(() => {
-      el.textContent += name[i++];
-      if (i === name.length) clearInterval(timer);
-    }, 90);
-  });
+ window.addEventListener('load', function() {
+  const el = document.getElementById('header-title');
+  const name = 'Jaswant Goud';
+  let i = 0;
+
+  let timer = setInterval(function() {
+    el.textContent += name[i++];
+    if (i === name.length) clearInterval(timer);
+  }, 90);
+});
 </script>
 
 
